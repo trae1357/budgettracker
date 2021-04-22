@@ -1,3 +1,13 @@
+mongoose.connect(
+  process.env.MONGODB_URI || 'mongodb://localhost/newbudget',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
+);
+
 let db;
 // create a new db request for a "budget" database.
 const request = indexedDB.open("budget", 1);
